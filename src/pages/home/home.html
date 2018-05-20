@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>Geraração de Senha!</h1>
+  <div>
+      <ion-list>
+          <ion-item>
+            <ion-label>Tipo</ion-label>
+            <ion-select [(ngModel)]="_tipo">
+              <ion-option *ngFor="let tipo of tipos" value="{{tipo.id}}">{{tipo.descricao}}</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+  </div>
+  <div>
+    <ion-list>
+          <ion-item>
+            <ion-label>Serviço</ion-label>
+            <ion-select [(ngModel)]="_servico">
+              <ion-option *ngFor="let servico of servicos" value="{{servico.id}}">{{servico.descricao}}</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+        <button ion-button block color="dark" (click)="irParaGerarSenha(_tipo, _servico)" >Gerar!</button>
+  </div>
+</ion-content>
